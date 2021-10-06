@@ -1,0 +1,140 @@
+/*-------------------------------------------------------------------------*/
+/*-----------------------BILLETS-------------------------------------------*/
+/*-------------------------------------------------------------------------*/
+
+.contenant_billet
+{
+  width: 50%;
+  min-width: 420px;
+  border: 1px black solid;
+  box-shadow: 5px 5px 5px gray;
+}
+
+
+/*-------------Bandeau de titre des billets----------------------*/
+
+.bandeau
+{
+background-color: gray;
+display: flex;
+padding-left: 10px;
+padding-right: 10px;
+}
+
+.titre
+{
+color: white;
+margin-left: 1px
+}
+
+.spacer
+{
+  margin : auto;
+}
+
+.date_creation
+{
+color: white;
+margin-right: 1px;
+}
+
+.date_modification
+{
+color: gold;
+font-weight: bold;
+text-shadow: 0px 1px black;
+margin-right: 1px;
+}
+
+/*-------------Texte des billets----------------------*/
+
+.contenu
+{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.contenu_reduit
+{
+  padding-left: 10px;
+  padding-right: 10px;
+  max-height: 100px;
+  overflow-x: auto;
+}
+
+/*-------------Bandeau de fin des billets----------------------*/
+
+.bandeau_fin
+{
+display: flex;
+padding-left: 10px;
+padding-right: 10px;
+}
+
+.LireLaSuite
+{
+}
+
+.lien_commentaire
+{
+  margin-right: 10px;
+}
+
+/*-------------------------------------------------------------------------*/
+/*-----------------------COMMENTAIRES--------------------------------------*/
+/*-------------------------------------------------------------------------*/
+
+.contenant_commentaire
+{
+  border: 1px black solid;
+  box-shadow: 5px 5px 5px gray;
+  width: 30%;
+  min-width: 300px;
+}
+
+/*-------------Bandeau de titre des commentaires----------------------*/
+
+.bandeau_commentaire
+{
+  background-color: cyan;
+  display: flex;
+}
+
+.pseudo_commentaire
+{
+ margin-left: 5px;
+}
+
+.date_commentaire
+{
+ margin-right: 5px;
+}
+
+.date_modification_commentaire
+{
+ font-weight: bold;
+ color: violet;
+ text-shadow: 1px 0px black;
+ margin-right: 5px;
+}
+
+/*-----------------------Texte des commentaires-------------------------*/
+
+.commentaire
+{
+  margin-left: 5px;
+}
+
+/*-------------------------------------------------------------------------*/
+/*-----------------------DIVERS--------------------------------------------*/
+/*-------------------------------------------------------------------------*/
+a
+{
+  color: #246b87;
+  text-decoration: none;
+}
+
+a:hover
+{
+  color: black;
+}
