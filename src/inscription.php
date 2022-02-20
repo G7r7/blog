@@ -43,7 +43,7 @@
                     ) {
                         //Si les conditions sont remplies//
 
-                                $mdp=crypt($_POST['mdp']);//Cryptage du password dans la variable $mdp
+                                $mdp=crypt($_POST['mdp'], 'salt');//Cryptage du password dans la variable $mdp
                                 $db=connexion_bdd();
                         try {
                                 $req=$db->prepare('INSERT INTO membres(email, pseudo, date_creation, mdp) VALUES(:email, :pseudo, NOW(), :mdp)');

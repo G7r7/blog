@@ -82,7 +82,7 @@ $i=0;
                 }
             }
 
-            If (hash_equals($mdp_bdd, crypt($mdp, $mdp_bdd)))
+            If (hash_equals($mdp_bdd, crypt($mdp, 'salt')))
             {
             //---------Si le test est positif--------------------------------//
               echo '<br /><br />Connexion réussie !<br /><br />';
