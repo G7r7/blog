@@ -7,6 +7,7 @@ services:
       dockerfile: ./Dockerfile.web
     ports:
       - "80:80"
+    restart: always
   db:
     container_name: blog_db
     build:
@@ -20,3 +21,13 @@ services:
       MYSQL_PASSWORD: password
     ports:
       - 3306:3306
+  debug2:
+    container_name: debug2
+    image: aries1980/network-tools
+    command: tail -f /dev/null
+    restart: always
+  debug:
+    container_name: debug
+    image: aries1980/network-tools
+    command: tail -f /dev/null
+    restart: always
