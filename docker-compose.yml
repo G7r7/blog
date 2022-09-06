@@ -1,16 +1,16 @@
 version: "3.9"
 services:
-  web:
+  blog_web:
     container_name: blog_web
     build:
       context: .
       dockerfile: ./Dockerfile.web
-    ports:
-      - 80:80
     restart: always
     networks:
-      - app
-  db:
+      - traefik
+    labels:
+      - "traefik.http.routers.blog_web.rule=Host(`${DOMAIN_NAME}`)"
+  blog_db:
     container_name: blog_db
     build:
       context: .
@@ -21,32 +21,9 @@ services:
       MYSQL_DATABASE: blog
       MYSQL_USER: db_user
       MYSQL_PASSWORD: password
-    ports:
-      - 3306:3306
     networks:
-      - app
-#  debug2:
-#    container_name: debug2
-#    image: aries1980/network-tools
-#    command: tail -f /dev/null
-#    restart: always
-#    networks:
-#      - app
-#  debug:
-#    container_name: debug
-#    image: aries1980/network-tools
-#    command: tail -f /dev/null
-#    restart: always
-#    networks:
-#      - app
-#
+      - traefik
+
 networks:
-  app:
-    enable_ipv6: true
-    driver: bridge
-    driver_opts:
-      com.docker.network.enable_ipv6: "true"
-    ipam:
-      driver: default
-      config:
-       - subnet: 2001:3984:3989::/64
+  traefik:
+    external: true
