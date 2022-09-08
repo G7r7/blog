@@ -9,7 +9,10 @@ services:
     networks:
       - traefik
     labels:
+      - "traefik.enable=true"
       - "traefik.http.routers.blog_web.rule=Host(`${DOMAIN_NAME}`)"
+      - "traefik.http.routers.blog_web.entrypoints=websecure"
+      - "traefik.http.routers.blog_web.tls.certresolver=myresolver"
   blog_db:
     container_name: blog_db
     build:
