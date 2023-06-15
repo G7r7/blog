@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: ./Dockerfile.web
     ports:
-      - "80:80"
+      - 8080:80
     restart: always
   db:
     container_name: blog_db
@@ -19,5 +19,3 @@ services:
       MYSQL_DATABASE: blog
       MYSQL_USER: db_user
       MYSQL_PASSWORD: password
-    ports:
-      - 3306:3306
